@@ -1,3 +1,7 @@
+//how to handle json response in to dart
+
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 
 class Api_Dart1 extends StatefulWidget {
@@ -22,15 +26,26 @@ class _Api_Dart1State extends State<Api_Dart1> {
       mobilenumber: "+91 7016452294");
 
   List<ApiDartClass1> apidartclasslist = [
-    ApiDartClass1(surname: "tapaniya-1",
+    ApiDartClass1(
+        surname: "tapaniya-1",
         name: "pradip-1",
         age: 20,
         mobilenumber: "+91 7016452294"),
-    ApiDartClass1(surname: "tapaniya-2",
+    ApiDartClass1(
+        surname: "tapaniya-2",
         name: "pradip-1",
         age: 20,
         mobilenumber: "+91 9429860195")
   ];
+
+  JsonDataClass jsondatavar = JsonDataClass.fromJson({
+    "userId": 1,
+    "id": 1,
+    "title":
+        "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+    "body":
+        "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -52,14 +67,25 @@ class _Api_Dart1State extends State<Api_Dart1> {
               '${api_map1['mobile_number']}',
               style: TextStyle(color: Colors.white, fontSize: 30),
             ),
-            SizedBox(height: 50,),
+            SizedBox(
+              height: 50,
+            ),
             Text(
               '${apidartclassvar.surname}',
               style: TextStyle(color: Colors.white, fontSize: 30),
             ),
-            SizedBox(height: 50,),
+            SizedBox(
+              height: 50,
+            ),
             Text(
               '${apidartclasslist[1].name}',
+              style: TextStyle(color: Colors.white, fontSize: 30),
+            ),
+            SizedBox(
+              height: 50,
+            ),
+            Text(
+              'json data = ${jsondatavar.title}',
               style: TextStyle(color: Colors.white, fontSize: 30),
             ),
           ],
@@ -75,8 +101,29 @@ class ApiDartClass1 {
   int? age;
   String? mobilenumber;
 
-  ApiDartClass1({required this.surname,
-    required this.name,
-    required this.age,
-    required this.mobilenumber});
+  ApiDartClass1(
+      {required this.surname,
+      required this.name,
+      required this.age,
+      required this.mobilenumber});
+}
+
+class JsonDataClass {
+  int? userId;
+  int? id;
+  String? title;
+  String? body;
+
+  JsonDataClass(
+      {required this.userId,
+      required this.id,
+      required this.title,
+      required this.body});
+
+  JsonDataClass.fromJson(Map<String, dynamic> json) {
+    userId = json['userId'];
+    id = json['id'];
+    title = json['title'];
+    body = json['body'];
+  }
 }
