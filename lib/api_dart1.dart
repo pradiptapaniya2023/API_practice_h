@@ -1,5 +1,12 @@
 //how to handle json response in to dart
 
+//page1 - homepage -> btn(map example);
+//page2 - map example -> btn(simple map , map class constructor , list map class.. , handling json map into dart);
+//page3 - map example -> btn(simple map);
+//page4 - map example -> btn(map class constructor);
+//page5 - map example -> btn(list map class..);
+//page6 - map example -> btn(handling json map into dart);
+
 import 'dart:ffi';
 
 import 'package:flutter/material.dart';

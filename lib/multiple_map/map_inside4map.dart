@@ -1,0 +1,165 @@
+import 'package:flutter/material.dart';
+
+class MultipleMap4 extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    // TODO: implement createState
+    return State_MultipleMap4();
+  }
+}
+
+class State_MultipleMap4 extends State<MultipleMap4> {
+  Map mMap = {
+    "id": 1,
+    "name": "Leanne Graham",
+    "username": "Bret",
+    "email": "Sincere@april.biz",
+    "address": {
+      "street": "Kulas Light",
+      "suite": "Apt. 556",
+      "city": "Gwenborough",
+      "zipcode": "92998-3874",
+      "geo": {"lat": "-37.3159", "lng": "81.1496"}
+    },
+    "phone": "1-770-736-8031 x56442",
+    "website": "hildegard.org",
+    "company": {
+      "name": "Romaguera-Crona",
+      "catchPhrase": "Multi-layered client-server neural-net",
+      "bs": "harness real-time e-markets"
+    }
+  };
+
+  Userdata ud = Userdata.fromJson({
+    "id": 1,
+    "name": "Leanne Graham",
+    "username": "Bret",
+    "email": "Sincere@april.biz",
+    "address": {
+      "street": "Kulas Light",
+      "suite": "Apt. 556",
+      "city": "Gwenborough",
+      "zipcode": "92998-3874",
+      "geo": {"lat": "-37.3159", "lng": "81.1496"}
+    },
+    "phone": "1-770-736-8031 x56442",
+    "website": "hildegard.org",
+    "company": {
+      "name": "Romaguera-Crona",
+      "catchPhrase": "Multi-layered client-server neural-net",
+      "bs": "harness real-time e-markets"
+    }
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Scaffold(
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Center(child: Text("==[${ud.id}]==")),
+          Center(child: Text("==[${ud.name}]==")),
+          Center(child: Text("==[${ud.username}]==")),
+          Center(child: Text("==[${ud.email}]==")),
+          Center(child: Text("==[${ud.address!.street}]==")),
+          Center(child: Text("==[${ud.address!.suite}]==")),
+          Center(child: Text("==[${ud.address!.city}]==")),
+          Center(child: Text("==[${ud.address!.zipcode}]==")),
+          Center(child: Text("==[${ud.address!.geo!.lat}]==")),
+          Center(child: Text("==[${ud.address!.geo!.lng}]==")),
+          Center(child: Text("==[${ud.phone}]==")),
+          Center(child: Text("==[${ud.website}]==")),
+          Center(child: Text("==[${ud.company!.name}]==")),
+          Center(child: Text("==[${ud.company!.catchPhrase}]==")),
+          Center(child: Text("==[${ud.company!.bs}]==")),
+        ],
+      ),
+    );
+  }
+}
+
+class Userdata {
+  int? id;
+  String? name;
+  String? username;
+  String? email;
+  Useradderess? address;
+  String? phone;
+  String? website;
+  Usercompany? company;
+
+  Userdata(
+      {required this.id,
+      required this.name,
+      required this.username,
+      required this.email,
+      required this.address,
+      required this.phone,
+      required this.website,
+      required this.company});
+
+  Userdata.fromJson(Map<String, dynamic> json) {
+    id = json["id"];
+    name = json["name"];
+    username = json["username"];
+    email = json["email"];
+    address = Useradderess.fromJson(json["address"]);
+    phone = json["phone"];
+    website = json["website"];
+    company = Usercompany.fromJson(json["company"]);
+  }
+}
+
+class Useradderess {
+  String? street;
+  String? suite;
+  String? city;
+  String? zipcode;
+  Adderessgeo? geo;
+
+  Useradderess(
+      {required this.street,
+      required this.suite,
+      required this.city,
+      required this.zipcode,
+      required this.geo});
+
+  Useradderess.fromJson(Map<String, dynamic> json) {
+    street = json["street"];
+    suite = json["suite"];
+    city = json["city"];
+    zipcode = json["zipcode"];
+    geo = Adderessgeo.fromJson(json["geo"]);
+  }
+}
+
+class Adderessgeo {
+  String? lat;
+  String? lng;
+
+  Adderessgeo({required this.lat, required this.lng});
+
+  Adderessgeo.fromJson(Map<String, dynamic> json) {
+    lat = json["lat"];
+    lng = json["lng"];
+  }
+}
+
+class Usercompany {
+  String? name;
+  String? catchPhrase;
+  String? bs;
+
+  Usercompany({
+    required this.name,
+    required this.catchPhrase,
+    required this.bs,
+  });
+
+  Usercompany.fromJson(Map<String, dynamic> json) {
+    name = json["name"];
+    catchPhrase = json["catchPhrase"];
+    bs = json["bs"];
+  }
+}
