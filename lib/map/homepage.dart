@@ -15,54 +15,119 @@ class _Map_HomepageState extends State<Map_Homepage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Center(
-            child: ElevatedButton(
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(
-                    builder: (context) {
-                      return Simplemap();
-                    },
-                  ));
-                },
-                child: Text("SIMPLE MAP")),
-          ),
-          Center(
-            child: ElevatedButton(
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(
-                    builder: (context) {
-                      return Map_List();
-                    },
-                  ));
-                },
-                child: Text("LIST MAP")),
-          ),
-          Center(
-            child: ElevatedButton(
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(
-                    builder: (context) {
-                      return Map_Single();
-                    },
-                  ));
-                },
-                child: Text("MAP SINGLE CLASS")),
-          ),
-          Center(
-            child: ElevatedButton(
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(
-                    builder: (context) {
-                      return Map_Json();
-                    },
-                  ));
-                },
-                child: Text("MAP SINGLE JSON")),
-          )
-        ],
+      appBar: AppBar(
+        title: Text(
+          "{MAP}",
+          style: TextStyle(fontFamily: "familyfont"),
+        ),
+      ),
+      body: Container(
+        height: double.infinity,
+        width: double.infinity,
+        decoration: BoxDecoration(
+            image: DecorationImage(
+                fit: BoxFit.cover,
+                image: AssetImage("asset/images/Inside bg.jpg"))),
+        child: Column(
+          children: [
+            Container(
+              margin: EdgeInsets.all(10),
+              height: 40,
+              width: 310,
+              decoration: BoxDecoration(
+                  color: Colors.blueAccent[100],
+                  borderRadius: BorderRadius.all(Radius.circular(10))),
+              child: InkWell(
+                  onTap: () {
+                    Navigator.push(context, MaterialPageRoute(
+                      builder: (context) {
+                        return Simplemap();
+                      },
+                    ));
+                  },
+                  child: Center(
+                      child: Text(
+                    "SIMPLE MAP",
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontFamily: "fontfamily",
+                        fontSize: 20),
+                  ))),
+            ),
+            Container(
+              margin: EdgeInsets.all(10),
+              height: 40,
+              width: 310,
+              decoration: BoxDecoration(
+                  color: Colors.blueAccent[100],
+                  borderRadius: BorderRadius.all(Radius.circular(10))),
+              child: InkWell(
+                  onTap: () {
+                    Navigator.push(context, MaterialPageRoute(
+                      builder: (context) {
+                        return Map_List();
+                      },
+                    ));
+                  },
+                  child: Center(
+                      child: Text(
+                    "LIST MAP",
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontFamily: "fontfamily",
+                        fontSize: 20),
+                  ))),
+            ),
+            Container(
+              margin: EdgeInsets.all(10),
+              height: 40,
+              width: 310,
+              decoration: BoxDecoration(
+                  color: Colors.blueAccent[100],
+                  borderRadius: BorderRadius.all(Radius.circular(10))),
+              child: InkWell(
+                  onTap: () {
+                    Navigator.push(context, MaterialPageRoute(
+                      builder: (context) {
+                        return Map_Single();
+                      },
+                    ));
+                  },
+                  child: Center(
+                      child: Text(
+                    "MAP SINGLE CLASS",
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontFamily: "fontfamily",
+                        fontSize: 20),
+                  ))),
+            ),
+            Container(
+              margin: EdgeInsets.all(10),
+              height: 40,
+              width: 310,
+              decoration: BoxDecoration(
+                  color: Colors.blueAccent[100],
+                  borderRadius: BorderRadius.all(Radius.circular(10))),
+              child: InkWell(
+                  onTap: () {
+                    Navigator.push(context, MaterialPageRoute(
+                      builder: (context) {
+                        return Map_Json();
+                      },
+                    ));
+                  },
+                  child: Center(
+                      child: Text(
+                    "MAP SINGLE JSON",
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontFamily: "fontfamily",
+                        fontSize: 20),
+                  ))),
+            ),
+          ],
+        ),
       ),
     );
   }
