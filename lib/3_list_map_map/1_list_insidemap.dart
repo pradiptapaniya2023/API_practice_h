@@ -305,6 +305,7 @@ class _ListMultiplemap1State extends State<ListMultiplemap1> {
                 Text("${listOfUserdata[index].company!.name}"),
                 Text("${listOfUserdata[index].company!.catchPhrase}"),
                 Text("${listOfUserdata[index].company!.bs}"),
+                Image.network("https://flutterwala.com/web_store/images/appIcon.png")
               ],
             ),
           );

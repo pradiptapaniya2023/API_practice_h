@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
-class MultipleMap1 extends StatefulWidget {
+class MultipleMap3 extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
     // TODO: implement createState
-    return State_MultipleMap1();
+    return State_MultipleMap3();
   }
 }
 
-class State_MultipleMap1 extends State<MultipleMap1> {
+class State_MultipleMap3 extends State<MultipleMap3> {
   Map mMap = {
     "id": 1,
     "name": "Leanne Graham",
@@ -19,6 +19,7 @@ class State_MultipleMap1 extends State<MultipleMap1> {
       "suite": "Apt. 556",
       "city": "Gwenborough",
       "zipcode": "92998-3874",
+      "geo": {"lat": "-37.3159", "lng": "81.1496"}
     },
     "phone": "1-770-736-8031 x56442",
     "website": "hildegard.org",
@@ -34,6 +35,7 @@ class State_MultipleMap1 extends State<MultipleMap1> {
       "suite": "Apt. 556",
       "city": "Gwenborough",
       "zipcode": "92998-3874",
+      "geo": {"lat": "-37.3159", "lng": "81.1496"}
     },
     "phone": "1-770-736-8031 x56442",
     "website": "hildegard.org",
@@ -54,6 +56,8 @@ class State_MultipleMap1 extends State<MultipleMap1> {
           Center(child: Text("==[${ud.address!.suite}]==")),
           Center(child: Text("==[${ud.address!.city}]==")),
           Center(child: Text("==[${ud.address!.zipcode}]==")),
+          Center(child: Text("==[${ud.address!.geo!.lat}]==")),
+          Center(child: Text("==[${ud.address!.geo!.lng}]==")),
           Center(child: Text("==[${ud.phone}]==")),
           Center(child: Text("==[${ud.website}]==")),
         ],
@@ -98,18 +102,32 @@ class Useradderess {
   String? suite;
   String? city;
   String? zipcode;
+  Adderessgeo? geo;
 
-  Useradderess({
-    required this.street,
-    required this.suite,
-    required this.city,
-    required this.zipcode,
-  });
+  Useradderess(
+      {required this.street,
+      required this.suite,
+      required this.city,
+      required this.zipcode,
+      required this.geo});
 
   Useradderess.fromJson(Map<String, dynamic> json) {
     street = json["street"];
     suite = json["suite"];
     city = json["city"];
     zipcode = json["zipcode"];
+    geo = Adderessgeo.fromJson(json["geo"]);
+  }
+}
+
+class Adderessgeo {
+  String? lat;
+  String? lng;
+
+  Adderessgeo({required this.lat, required this.lng});
+
+  Adderessgeo.fromJson(Map<String, dynamic> json) {
+    lat = json["lat"];
+    lng = json["lng"];
   }
 }

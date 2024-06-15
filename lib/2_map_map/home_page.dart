@@ -1,23 +1,26 @@
-import 'package:api_prac_1/map/map_simple.dart';
+import 'package:api_prac_1/2_map_map/2_map_inside3map.dart';
 import 'package:flutter/material.dart';
-import 'map_list_class.dart';
-import 'map_single_class.dart';
-import 'map_singlejson_handling.dart';
+import '1_map_inside2map.dart';
+import '3_map_inside4map.dart';
+import '4_map_inside5map.dart';
 
-class Map_Homepage extends StatefulWidget {
-  const Map_Homepage({super.key});
 
+
+class HomePage_multiplemap extends StatefulWidget {
   @override
-  State<Map_Homepage> createState() => _Map_HomepageState();
+  State<StatefulWidget> createState() {
+    // TODO: implement createState
+    return State_HomePage_multiplemap();
+  }
 }
 
-class _Map_HomepageState extends State<Map_Homepage> {
+class State_HomePage_multiplemap extends State<HomePage_multiplemap> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "{MAP}",
+          "MAP/MAP",
           style: TextStyle(fontFamily: "familyfont"),
         ),
       ),
@@ -31,7 +34,7 @@ class _Map_HomepageState extends State<Map_Homepage> {
         child: Column(
           children: [
             Container(
-              margin: EdgeInsets.all(10),
+              margin: EdgeInsets.only(top: 219),
               height: 40,
               width: 310,
               decoration: BoxDecoration(
@@ -41,18 +44,18 @@ class _Map_HomepageState extends State<Map_Homepage> {
                   onTap: () {
                     Navigator.push(context, MaterialPageRoute(
                       builder: (context) {
-                        return Simplemap();
+                        return MultipleMap2();
                       },
                     ));
                   },
                   child: Center(
                       child: Text(
-                    "SIMPLE MAP",
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontFamily: "fontfamily",
-                        fontSize: 20),
-                  ))),
+                        "MAP/MAP",
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontFamily: "fontfamily",
+                            fontSize: 20),
+                      ))),
             ),
             Container(
               margin: EdgeInsets.all(10),
@@ -65,18 +68,18 @@ class _Map_HomepageState extends State<Map_Homepage> {
                   onTap: () {
                     Navigator.push(context, MaterialPageRoute(
                       builder: (context) {
-                        return Map_List();
+                        return MultipleMap3();
                       },
                     ));
                   },
                   child: Center(
                       child: Text(
-                    "LIST MAP",
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontFamily: "fontfamily",
-                        fontSize: 20),
-                  ))),
+                        "MAP/MAP/MAP",
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontFamily: "fontfamily",
+                            fontSize: 20),
+                      ))),
             ),
             Container(
               margin: EdgeInsets.all(10),
@@ -89,18 +92,18 @@ class _Map_HomepageState extends State<Map_Homepage> {
                   onTap: () {
                     Navigator.push(context, MaterialPageRoute(
                       builder: (context) {
-                        return Map_Single();
+                        return MultipleMap4();
                       },
                     ));
                   },
                   child: Center(
                       child: Text(
-                    "MAP SINGLE CLASS",
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontFamily: "fontfamily",
-                        fontSize: 20),
-                  ))),
+                        "MAP/MAP/MAP/MAP",
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontFamily: "fontfamily",
+                            fontSize: 20),
+                      ))),
             ),
             Container(
               margin: EdgeInsets.all(10),
@@ -113,18 +116,18 @@ class _Map_HomepageState extends State<Map_Homepage> {
                   onTap: () {
                     Navigator.push(context, MaterialPageRoute(
                       builder: (context) {
-                        return Map_Json();
+                        return MultipleMap5();
                       },
                     ));
                   },
                   child: Center(
                       child: Text(
-                    "MAP SINGLE JSON",
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontFamily: "fontfamily",
-                        fontSize: 20),
-                  ))),
+                        "MAP/MAP/MAP/MAP/MAP",
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontFamily: "fontfamily",
+                            fontSize: 20),
+                      ))),
             ),
           ],
         ),

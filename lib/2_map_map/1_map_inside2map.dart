@@ -19,7 +19,6 @@ class State_MultipleMap2 extends State<MultipleMap2> {
       "suite": "Apt. 556",
       "city": "Gwenborough",
       "zipcode": "92998-3874",
-      "geo": {"lat": "-37.3159", "lng": "81.1496"}
     },
     "phone": "1-770-736-8031 x56442",
     "website": "hildegard.org",
@@ -35,7 +34,6 @@ class State_MultipleMap2 extends State<MultipleMap2> {
       "suite": "Apt. 556",
       "city": "Gwenborough",
       "zipcode": "92998-3874",
-      "geo": {"lat": "-37.3159", "lng": "81.1496"}
     },
     "phone": "1-770-736-8031 x56442",
     "website": "hildegard.org",
@@ -43,24 +41,56 @@ class State_MultipleMap2 extends State<MultipleMap2> {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Center(child: Text("==[${ud.id}]==")),
-          Center(child: Text("==[${ud.name}]==")),
-          Center(child: Text("==[${ud.username}]==")),
-          Center(child: Text("==[${ud.email}]==")),
-          Center(child: Text("==[${ud.address!.street}]==")),
-          Center(child: Text("==[${ud.address!.suite}]==")),
-          Center(child: Text("==[${ud.address!.city}]==")),
-          Center(child: Text("==[${ud.address!.zipcode}]==")),
-          Center(child: Text("==[${ud.address!.geo!.lat}]==")),
-          Center(child: Text("==[${ud.address!.geo!.lng}]==")),
-          Center(child: Text("==[${ud.phone}]==")),
-          Center(child: Text("==[${ud.website}]==")),
-        ],
+      appBar: AppBar(
+        title: Text(
+          "SIMPLEMAP",
+          style: TextStyle(fontFamily: "familyfont"),
+        ),
+      ),
+      body: Container(
+        height: double.infinity,
+        width: double.infinity,
+        decoration: BoxDecoration(
+            image: DecorationImage(
+                fit: BoxFit.cover,
+                image: AssetImage("asset/images/Inside bg.jpg"))),
+        child: Column(
+          children: [
+            Container(
+              margin: EdgeInsets.only(top: 105),
+              height: 400,
+              width: 310,
+              decoration: BoxDecoration(
+                  color: Colors.grey,
+                  border: Border.all(color: Colors.black, width: 2),
+                  borderRadius: BorderRadius.all(Radius.circular(10))),
+              child: Column(children: [
+
+              Center(
+                  child: Text(' ->${ud.id} \n ->${ud.name} \n ->${ud.username} \n ->${ud.email} \n ->${ud.address!.street} \n ->${ud.address!.suite} \n ->${ud.address!.city} \n ->${ud.phone} \n ->${ud.website}',
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 25,
+                          fontFamily: "familyfont")),
+                ),
+
+              ],),
+            ),
+            SizedBox(height: 40),
+            Container(
+              height: 64,
+              width: 170,
+              child: InkWell(
+                onTap: () {},
+                child: Card(
+                  elevation: 5,
+                  shadowColor: Colors.yellow[650],
+                ),
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
@@ -102,32 +132,18 @@ class Useradderess {
   String? suite;
   String? city;
   String? zipcode;
-  Adderessgeo? geo;
 
-  Useradderess(
-      {required this.street,
-      required this.suite,
-      required this.city,
-      required this.zipcode,
-      required this.geo});
+  Useradderess({
+    required this.street,
+    required this.suite,
+    required this.city,
+    required this.zipcode,
+  });
 
   Useradderess.fromJson(Map<String, dynamic> json) {
     street = json["street"];
     suite = json["suite"];
     city = json["city"];
     zipcode = json["zipcode"];
-    geo = Adderessgeo.fromJson(json["geo"]);
-  }
-}
-
-class Adderessgeo {
-  String? lat;
-  String? lng;
-
-  Adderessgeo({required this.lat, required this.lng});
-
-  Adderessgeo.fromJson(Map<String, dynamic> json) {
-    lat = json["lat"];
-    lng = json["lng"];
   }
 }
