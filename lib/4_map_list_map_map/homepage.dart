@@ -1,6 +1,5 @@
-import 'package:api_prac_1/2_map_map/2_map_inside3map.dart';
 import 'package:flutter/material.dart';
-import 'first.dart';
+import '1_map_list_insidemap.dart';
 
 class HomePage_Map_List_Insidemap extends StatefulWidget {
   @override
@@ -40,7 +39,7 @@ class State_HomePage_Map_List_Insidemap extends State<HomePage_Map_List_Insidema
                   onTap: () {
                     Navigator.push(context, MaterialPageRoute(
                       builder: (context) {
-                        return First();
+                        return Map_List_Insidemap();
                       },
                     ));
                   },
