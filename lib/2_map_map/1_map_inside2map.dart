@@ -44,7 +44,7 @@ class State_MultipleMap2 extends State<MultipleMap2> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "SIMPLEMAP",
+          "MAP/MAP",
           style: TextStyle(fontFamily: "familyfont"),
         ),
       ),

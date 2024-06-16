@@ -43,24 +43,63 @@ class State_MultipleMap3 extends State<MultipleMap3> {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Center(child: Text("==[${ud.id}]==")),
-          Center(child: Text("==[${ud.name}]==")),
-          Center(child: Text("==[${ud.username}]==")),
-          Center(child: Text("==[${ud.email}]==")),
-          Center(child: Text("==[${ud.address!.street}]==")),
-          Center(child: Text("==[${ud.address!.suite}]==")),
-          Center(child: Text("==[${ud.address!.city}]==")),
-          Center(child: Text("==[${ud.address!.zipcode}]==")),
-          Center(child: Text("==[${ud.address!.geo!.lat}]==")),
-          Center(child: Text("==[${ud.address!.geo!.lng}]==")),
-          Center(child: Text("==[${ud.phone}]==")),
-          Center(child: Text("==[${ud.website}]==")),
-        ],
+      appBar: AppBar(
+        title: Text(
+          "MAP/MAP/MAP",
+          style: TextStyle(fontFamily: "familyfont"),
+        ),
+      ),
+      body: Container(
+        height: double.infinity,
+        width: double.infinity,
+        decoration: BoxDecoration(
+            image: DecorationImage(
+                fit: BoxFit.cover,
+                image: AssetImage("asset/images/Inside bg.jpg"))),
+        child: Column(
+          children: [
+            Container(
+              margin: EdgeInsets.only(top: 105),
+              height: 400,
+              width: 310,
+              decoration: BoxDecoration(
+                  color: Colors.grey,
+                  border: Border.all(color: Colors.black, width: 2),
+                  borderRadius: BorderRadius.all(Radius.circular(10))),
+              child: Column(
+                children: [
+                  Expanded(
+                    child: ListView(
+                      children: [
+                        Center(
+                          child: Text(
+                              ' ->${ud.id} \n ->${ud.name} \n ->${ud.username} \n ->${ud.email} \n ->${ud.address!.street} \n ->${ud.address!.suite} \n ->${ud.address!.city} \n ->${ud.address!.zipcode} \n ->${ud.address!.geo!.lat} \n ->${ud.address!.geo!.lng} \n ->${ud.phone} \n ->${ud.website}',
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 25,
+                                  fontFamily: "familyfont")),
+                        ),
+                      ],
+                    ),
+                  )
+                ],
+              ),
+            ),
+            SizedBox(height: 40),
+            Container(
+              height: 64,
+              width: 170,
+              child: InkWell(
+                onTap: () {},
+                child: Card(
+                  elevation: 5,
+                  shadowColor: Colors.yellow[650],
+                ),
+              ),
+            )
+          ],
+        ),
       ),
     );
   }

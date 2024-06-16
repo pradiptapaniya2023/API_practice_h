@@ -5,6 +5,7 @@ import '2_map_map/home_page.dart';
 import '3_list_map_map/homepage.dart';
 import '4_map_list_map_map/homepage.dart';
 import '5_API_releted_task/homepage.dart';
+import '6_API_get/homepage.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
@@ -146,6 +147,30 @@ class _HomepageState extends State<Homepage> {
                     child: Center(
                         child: Text(
                       "MAP TASK",
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontFamily: "fontfamily",
+                          fontSize: 20),
+                    ))),
+              ),
+              Container(
+                margin: EdgeInsets.all(10),
+                height: 40,
+                width: 310,
+                decoration: BoxDecoration(
+                    color: Colors.blueAccent[100],
+                    borderRadius: BorderRadius.all(Radius.circular(10))),
+                child: InkWell(
+                    onTap: () {
+                      Navigator.push(context, MaterialPageRoute(
+                        builder: (context) {
+                          return Api_Homepage();
+                        },
+                      ));
+                    },
+                    child: Center(
+                        child: Text(
+                      "API_GET",
                       style: TextStyle(
                           color: Colors.black,
                           fontFamily: "fontfamily",
