@@ -79,6 +79,7 @@ class State_Map_List_Dataprint extends State<Map_List_Dataprint> {
   void initState() {
     // TODO: implement initState
     super.initState();
+    fetchApiData();
   }
 
   @override
